@@ -8,7 +8,6 @@ fi
 url=$1
 port=$2
 
-
 if [ $# -gt 2 ]; then
     username=$3
     password=$4
@@ -33,11 +32,7 @@ if [[ ! $response =~ "protocol\": \"vless\"" ]]; then
     exit 1
 fi
 
-# 检查配置文件是否存在
-if [ ! -d "config" ]; then
-    echo "[x] Config file missing. Exiting."
-    exit 1
-fi
+mkdir -p config
 
 # 检查是否安装了Docker
 if ! command -v docker >/dev/null; then

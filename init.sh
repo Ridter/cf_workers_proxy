@@ -186,8 +186,6 @@ EOL
 
 # 生成Docker Compose文件
 cat > docker-compose.yml <<EOL
-version: '3'
-
 services:
   cf_proxy:
     image: teddysun/xray:latest
